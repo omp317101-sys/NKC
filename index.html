@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nirmal Kumbh - Citizen Sanitation Portal</title>
+    <title>Nirmal Kumbh - Cleaner Spaces, Brighter Tomorrows</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,14 +13,14 @@
             theme: {
                 extend: {
                     colors: {
-                        kumbhGreen: {
-                            50: '#F2FBF5',
-                            100: '#E1F6E8',
+                        nkGreen: {
+                            50: '#F2FAF4',
+                            100: '#E1F5E6',
                             500: '#2E7D32',
-                            600: '#1E6322',
-                            700: '#144A17',
-                            800: '#0F3711',
-                            900: '#09240B'
+                            600: '#1B5E20',
+                            700: '#154A19',
+                            800: '#0E3612',
+                            900: '#08230B'
                         },
                         emeraldGlow: '#10B981'
                     },
@@ -48,7 +48,7 @@
     <style>
         html, body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #051408;
+            background-color: #06170A;
             color: #1E293B;
             height: 100%;
         }
@@ -59,9 +59,9 @@
             z-index: 1;
         }
 
-        /* Kumbh Ghat Background Cover */
+        /* Kumbh Ghat Background */
         .kumbh-hero-bg {
-            background-image: linear-gradient(to bottom, rgba(5, 20, 8, 0.78), rgba(9, 36, 11, 0.90)), 
+            background-image: linear-gradient(to bottom, rgba(6, 23, 10, 0.78), rgba(8, 35, 11, 0.94)), 
                               url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
@@ -80,7 +80,7 @@
         .pin-head {
             width: 32px;
             height: 32px;
-            background: #1E6322;
+            background: #1B5E20;
             border: 2.5px solid #ffffff;
             border-radius: 50%;
             display: flex;
@@ -96,7 +96,7 @@
             height: 0;
             border-left: 6px solid transparent;
             border-right: 6px solid transparent;
-            border-top: 10px solid #1E6322;
+            border-top: 10px solid #1B5E20;
             margin-top: -3px;
             z-index: 1;
         }
@@ -121,40 +121,42 @@
         }
     </style>
 </head>
-<body class="h-full bg-[#051408] text-slate-800 dark:text-slate-100 antialiased selection:bg-emerald-600 selection:text-white flex justify-center">
+<body class="h-full bg-[#06170A] text-slate-800 dark:text-slate-100 antialiased selection:bg-emerald-600 selection:text-white flex justify-center">
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden max-w-xs w-full p-3.5 rounded-2xl shadow-2xl text-xs font-bold text-center border transition-all pointer-events-none"></div>
 
-    <div id="appContainer" class="w-full max-w-md h-full min-h-screen bg-white dark:bg-[#0A1A0D] shadow-2xl relative flex flex-col overflow-x-hidden border-x border-slate-200 dark:border-emerald-950/40">
+    <div id="appContainer" class="w-full max-w-md h-full min-h-screen bg-white dark:bg-[#0A1D0E] shadow-2xl relative flex flex-col overflow-x-hidden border-x border-slate-200 dark:border-emerald-950/40">
 
-        <!-- ================= AUTH VIEW (KUMBH HERO COVER) ================= -->
+        <!-- ================= AUTH VIEW (KUMBH BACKGROUND + LOGO) ================= -->
         <main id="authSection" class="flex-1 flex flex-col justify-between kumbh-hero-bg text-white p-6 relative">
             
-            <div class="pt-6 text-center space-y-2 relative z-10">
-                <!-- Nirmal Kumbh Visual Logo Vector -->
-                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-900/60 backdrop-blur-md border-2 border-emerald-400/40 flex flex-col items-center justify-center shadow-2xl relative overflow-hidden">
-                    <span class="text-xs text-emerald-300 font-mono font-black -mb-1 animate-pulse">((•))</span>
-                    <span class="text-3xl">🗑️</span>
-                    <span class="text-[10px] absolute -bottom-0.5 right-1.5">🍃</span>
+            <div class="pt-6 text-center space-y-3 relative z-10">
+                <!-- Nirmal Kumbh Official Logo -->
+                <div class="w-24 h-24 mx-auto rounded-full bg-white p-1 shadow-2xl border-2 border-emerald-400/50 flex items-center justify-center overflow-hidden">
+                    <img src="logo.png" onerror="this.onerror=null; this.src='https://api.iconify.design/fluent-emoji:wastebasket.svg';" alt="Nirmal Kumbh Logo" class="w-full h-full object-contain">
                 </div>
+
                 <div>
-                    <h1 class="text-2xl font-black tracking-tight text-white flex items-center justify-center gap-1.5">
+                    <h1 class="text-2xl font-extrabold tracking-tight text-white">
                         Nirmal Kumbh
                     </h1>
-                    <p class="text-[11px] text-emerald-200/90 tracking-wider uppercase font-semibold mt-0.5">
+                    <p class="text-[11px] text-emerald-200/90 tracking-wider uppercase font-bold mt-0.5">
                         Cleaner Spaces • Brighter Tomorrows
                     </p>
-                    <p class="text-[10px] text-emerald-300/70 font-mono mt-1">Nashik Kumbh Mela Civic Grid</p>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-[10px] text-emerald-300 font-semibold mt-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Nashik Kumbh Mela Civic Grid
+                    </div>
                 </div>
             </div>
 
             <!-- Login Glass Card -->
-            <div class="bg-[#0c2410]/85 backdrop-blur-xl text-slate-100 rounded-3xl p-6 shadow-2xl border border-emerald-500/25 my-auto space-y-4 relative z-10">
+            <div class="bg-[#0b2410]/85 backdrop-blur-xl text-slate-100 rounded-3xl p-6 shadow-2xl border border-emerald-500/25 my-auto space-y-4 relative z-10">
                 <div class="flex items-center justify-between border-b pb-3 border-emerald-900/60">
                     <div>
-                        <h2 class="text-sm font-black text-white">Pilgrim & Citizen Portal</h2>
-                        <p class="text-[11px] text-emerald-300/80">Report waste & track smart bin levels</p>
+                        <h2 class="text-sm font-black text-white">Citizen & Pilgrim Desk</h2>
+                        <p class="text-[11px] text-emerald-300/80">Report garbage & track smart bins</p>
                     </div>
                     <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-extrabold px-2.5 py-1 rounded-full border border-emerald-500/30">Nashik Live</span>
                 </div>
@@ -172,29 +174,29 @@
                         <label class="text-[10px] font-black uppercase text-emerald-300/80">City / Ghat Location</label>
                         <input type="text" id="citizenInputCity" value="Nashik (Ramkund)" required class="w-full mt-1 px-4 py-2.5 text-xs font-bold rounded-2xl bg-black/40 border border-emerald-900/80 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                     </div>
-                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-kumbhGreen-600 hover:from-emerald-500 hover:to-kumbhGreen-500 text-white font-black py-3.5 rounded-2xl shadow-xl text-xs uppercase tracking-wider active:scale-95 transition-all border border-emerald-400/30">
-                        Enter Nirmal Kumbh Desk
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-nkGreen-600 hover:from-emerald-500 hover:to-nkGreen-500 text-white font-black py-3.5 rounded-2xl shadow-xl text-xs uppercase tracking-wider active:scale-95 transition-all border border-emerald-400/30">
+                        Launch Nirmal Kumbh Portal
                     </button>
                 </form>
             </div>
 
             <div class="text-center text-[10px] text-emerald-200/70 font-semibold py-2 relative z-10">
-                Nashik Municipal Corporation • Kumbh Smart Sanitation
+                Nashik Municipal Corporation • Smart IoT Sanitation
             </div>
         </main>
 
         <!-- ================= MAIN APP VIEW ================= -->
         <div id="mainSection" class="hidden flex-1 flex flex-col h-full overflow-hidden">
             
-            <header class="bg-gradient-to-r from-[#09240B] via-[#144A17] to-[#09240B] text-white px-5 py-3.5 flex items-center justify-between sticky top-0 z-40 shadow-lg border-b border-emerald-500/20">
+            <header class="bg-gradient-to-r from-[#08230B] via-[#154A19] to-[#08230B] text-white px-5 py-3.5 flex items-center justify-between sticky top-0 z-40 shadow-lg border-b border-emerald-500/20">
                 <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-base">
-                        🍃
+                    <div class="w-9 h-9 rounded-full bg-white p-0.5 border border-emerald-400/40 flex items-center justify-center overflow-hidden">
+                        <img src="logo.png" onerror="this.onerror=null; this.src='https://api.iconify.design/fluent-emoji:wastebasket.svg';" class="w-full h-full object-contain">
                     </div>
                     <div>
                         <h1 class="font-extrabold text-sm leading-tight flex items-center gap-1.5">
                             Nirmal Kumbh
-                            <span class="text-[8px] bg-emerald-400/20 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-400/30">IoT Grid</span>
+                            <span class="text-[8px] bg-emerald-400/20 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-400/30">Live</span>
                         </h1>
                         <p class="text-[9px] text-emerald-300/80 uppercase font-bold tracking-wider" id="headerCitizenName">Pilgrim • Nashik</p>
                     </div>
@@ -238,7 +240,7 @@
                         </div>
 
                         <div class="flex gap-2">
-                            <input type="text" id="landmarkSearchInput" placeholder="Search ghat, temple or Nashik street..." class="flex-1 px-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-[#08180B] border border-slate-200 dark:border-emerald-950 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                            <input type="text" id="landmarkSearchInput" placeholder="Search ghat, temple or street in Nashik..." class="flex-1 px-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-[#08180B] border border-slate-200 dark:border-emerald-950 focus:outline-none focus:ring-1 focus:ring-emerald-500">
                             <button type="button" onclick="searchCityStreet()" class="px-3 py-2 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-xl active:scale-95 transition-all">
                                 🔍 Find
                             </button>
@@ -255,7 +257,7 @@
 
                         <div class="p-3 bg-slate-50 dark:bg-[#08180B] border border-slate-200 dark:border-emerald-950 rounded-2xl text-center space-y-2">
                             <span class="text-[11px] font-extrabold text-emerald-700 dark:text-emerald-400 block" id="geoStatusLabel">
-                                📍 Ready. Tap "Lock Satellite GPS", tap map, or drag green pin.
+                                📍 Ready. Tap "Lock Satellite GPS", tap map, or drag pin.
                             </span>
 
                             <div class="p-2 bg-emerald-50/50 dark:bg-emerald-950/40 rounded-xl border border-emerald-200 dark:border-emerald-900/60 flex items-center justify-between gap-2">
@@ -288,7 +290,7 @@
                         <label class="block cursor-pointer">
                             <div id="dropzoneEmpty" class="border-2 border-dashed border-slate-300 dark:border-emerald-950 rounded-2xl p-4 text-center bg-slate-50 dark:bg-[#08180B] hover:border-emerald-500 transition-colors">
                                 <span class="text-3xl block mb-1">📸</span>
-                                <span class="text-xs font-bold text-slate-700 dark:text-slate-200 block">Tap to Snap Ghat Photo or Upload Evidence</span>
+                                <span class="text-xs font-bold text-slate-700 dark:text-slate-200 block">Tap to Open Camera or Upload Spot Photo</span>
                                 <span class="text-[10px] text-slate-400">AI audits photo for waste before dispatching crew</span>
                             </div>
                             <input type="file" id="photoFileInput" accept="image/*" capture="environment" onchange="onPhotoSelected(event)" class="hidden">
@@ -300,7 +302,7 @@
                             <div id="scannerOverlay" class="hidden absolute inset-0 bg-black/60 flex flex-col justify-between p-3 pointer-events-none">
                                 <span class="text-[9px] font-mono text-emerald-400 font-bold">[ NIRMAL KUMBH AI VISION AUDIT ]</span>
                                 <div class="w-full h-0.5 bg-emerald-400 ai-laser"></div>
-                                <span class="text-[10px] font-mono text-emerald-300 text-center animate-pulse">Inspecting photo for plastics & ghat refuse...</span>
+                                <span class="text-[10px] font-mono text-emerald-300 text-center animate-pulse">Auditing photo for plastics & ghat refuse...</span>
                             </div>
 
                             <button type="button" onclick="clearSelectedPhoto()" class="absolute top-2 right-2 bg-black/70 text-white w-7 h-7 rounded-full text-xs font-bold">✕</button>
@@ -330,7 +332,7 @@
                     <div class="bg-white dark:bg-[#0D2411] border border-slate-200 dark:border-emerald-950/80 rounded-3xl p-4 shadow-sm space-y-3">
                         <textarea id="reportComments" rows="2" placeholder="Specific Ghat name, Mandir Chowk, or waste notes..." class="w-full p-3 text-xs rounded-2xl bg-slate-50 dark:bg-[#08180B] border border-slate-200 dark:border-emerald-950 focus:outline-none focus:ring-1 focus:ring-emerald-500"></textarea>
                         
-                        <button type="button" id="submitReportBtn" onclick="submitCitizenReport()" class="w-full bg-gradient-to-r from-emerald-600 to-kumbhGreen-600 hover:from-emerald-500 hover:to-kumbhGreen-500 text-white font-black py-3.5 px-4 rounded-full shadow-lg text-xs uppercase tracking-wider active:scale-95 transition-all">
+                        <button type="button" id="submitReportBtn" onclick="submitCitizenReport()" class="w-full bg-gradient-to-r from-emerald-600 to-nkGreen-600 hover:from-emerald-500 text-white font-black py-3.5 px-4 rounded-full shadow-lg text-xs uppercase tracking-wider active:scale-95 transition-all">
                             Submit Grievance to Nirmal Kumbh Command
                         </button>
                     </div>
@@ -400,7 +402,7 @@
         const REAL_TRASH_IMAGE = "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?auto=format&fit=crop&w=800&q=80";
         const REAL_CLEAN_IMAGE = "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80";
 
-        // Nashik City Center (Godavari / Ramkund Ghats)
+        // Nashik City Center (Godavari Ghats / Ramkund)
         const CITY_DEFAULT = [19.9975, 73.7898];
         
         let savedSession = JSON.parse(localStorage.getItem('nirmal_kumbh_citizen') || 'null');
@@ -751,7 +753,7 @@
                     desc.innerText = descriptionText;
                     
                     submitBtn.disabled = false;
-                    submitBtn.className = "w-full bg-gradient-to-r from-emerald-600 to-kumbhGreen-600 hover:from-emerald-500 text-white font-black py-3.5 px-4 rounded-full shadow-lg text-xs uppercase tracking-wider active:scale-95 transition-all cursor-pointer";
+                    submitBtn.className = "w-full bg-gradient-to-r from-emerald-600 to-nkGreen-600 hover:from-emerald-500 text-white font-black py-3.5 px-4 rounded-full shadow-lg text-xs uppercase tracking-wider active:scale-95 transition-all cursor-pointer";
                     showToast("🤖 Verified: Solid Waste Detected");
                 } else {
                     currentAiVerification = { isValid: false, verdict: "Rejected (Clean Area)" };
@@ -778,7 +780,7 @@
             
             const submitBtn = document.getElementById('submitReportBtn');
             submitBtn.disabled = false;
-            submitBtn.className = "w-full bg-gradient-to-r from-emerald-600 to-kumbhGreen-600 hover:from-emerald-500 text-white font-black py-3.5 px-4 rounded-full shadow-lg text-xs uppercase tracking-wider active:scale-95 transition-all";
+            submitBtn.className = "w-full bg-gradient-to-r from-emerald-600 to-nkGreen-600 hover:from-emerald-500 text-white font-black py-3.5 px-4 rounded-full shadow-lg text-xs uppercase tracking-wider active:scale-95 transition-all";
         }
 
         function submitCitizenReport() {
